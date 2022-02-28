@@ -1,0 +1,29 @@
+{
+  "nameList": [
+    {
+      "nameValue": "Петров Петр Петрович",
+      "cityValue": "Санкт-Петербург",
+      "id": 2
+    },
+    {
+      "nameValue": "Василий Жиглов",
+      "cityValue": "Владивосток",
+      "id": 3
+    },
+    {
+      "nameValue": "Игорь Николаевич",
+      "cityValue": "Москва",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

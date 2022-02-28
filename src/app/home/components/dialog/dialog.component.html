@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Добавление пользователя</h1>
+<div mat-dialog-content>
+  <form [formGroup]="nameForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Введите ФИО</mat-label>
+      <input formControlName="nameValue" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Выберите город</mat-label>
+      <mat-select formControlName="cityValue">
+        <mat-option value="Москва">Москва</mat-option>
+        <mat-option value="Санкт-Петербург">Санкт-Петербург</mat-option>
+        <mat-option value="Краснодар">Краснодар</mat-option>
+        <mat-option value="Сочи">Сочи</mat-option>
+        <mat-option value="Балашиха">Балашиха</mat-option>
+        <mat-option value="Владивосток">Владивосток</mat-option>
+        <mat-option value="Липецк">Липецк</mat-option>
+        <mat-option value="Кострома">Кострома</mat-option>
+        <mat-option value="Мурманск">Мурманск</mat-option>
+        <mat-option value="Новороссийск">Новороссийск</mat-option>
+        <mat-option value="Тула">Тула</mat-option>
+        <mat-option value="Тюмень">Тюмень</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Отмена</button>
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="addName()"
+  >
+    {{ actionBtn }}
+  </button>
+</div>
