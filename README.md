@@ -7,6 +7,10 @@ Run `npm install -g json-server` to install JSON Server.
 ## Start JSON Server
 
 Run `json-server --watch db.json` to imitate remote server. Navigate to `http://localhost:3000/`.
+## Install dependencies
+
+Run `npm i`.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
