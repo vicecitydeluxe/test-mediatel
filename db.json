@@ -1,18 +1,18 @@
 {
   "nameList": [
     {
-      "nameValue": "Петров Петр Петрович",
-      "cityValue": "Санкт-Петербург",
+      "nameValue": "Иванов Иван Иванович",
+      "cityValue": "Москва",
       "id": 2
     },
     {
-      "nameValue": "Василий Жиглов",
-      "cityValue": "Владивосток",
+      "nameValue": "Петя Петров",
+      "cityValue": "Санкт-Петербург",
       "id": 3
     },
     {
-      "nameValue": "Игорь Николаевич",
-      "cityValue": "Москва",
+      "nameValue": "Василий Чуйков",
+      "cityValue": "Тула",
       "id": 4
     }
   ],

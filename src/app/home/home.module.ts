@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table'; 
 import {MatPaginatorModule} from '@angular/material/paginator'; 
 import {MatSortModule} from '@angular/material/sort'; 
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
  
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MatSortModule} from '@angular/material/sort';
     FormsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSnackBarModule
         ],
 })
 export class HomeModule {}

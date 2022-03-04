@@ -5,6 +5,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-layout',
@@ -18,7 +19,11 @@ export class LayoutComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private dialog: MatDialog, private api: ApiService) {}
+  constructor(private dialog: MatDialog, private api: ApiService, private _snackBar: MatSnackBar) {}
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+  }
 
   openDialog() {
     this.dialog
@@ -42,7 +47,8 @@ export class LayoutComponent implements OnInit {
         this.dataSource.sort = this.sort;
       },
       error: () => {
-        alert('Ошибка при получении данных');
+        this.openSnackBar('Ошибка при получении данных','Закрыть')
+        // alert('Ошибка при получении данных');
       },
     });
   }
@@ -64,11 +70,13 @@ export class LayoutComponent implements OnInit {
   deleteData(id: number) {
     this.api.deleteData(id).subscribe({
       next: (res) => {
-        alert('Данные обновлены успешно');
+        // alert('Данные обновлены успешно');
+        this.openSnackBar('Данные обновлены успешно','Закрыть')
         this.getAllNames();
       },
       error: () => {
-        alert('Ошибка при удалении данных');
+        this.openSnackBar('Ошибка при удалении данных','Закрыть')
+        // alert('Ошибка при удалении данных');
       },
     });
   }
