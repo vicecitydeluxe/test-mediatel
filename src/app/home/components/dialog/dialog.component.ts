@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dialog',
@@ -19,7 +19,7 @@ export class DialogComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private dialogRef: MatDialogRef<DialogComponent>
   ) {}
-  
+
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
   }
@@ -37,21 +37,17 @@ export class DialogComponent implements OnInit {
     }
   }
 
-
-  
   addName() {
     if (!this.editData) {
       if (this.nameForm.valid) {
         this.api.postData(this.nameForm.value).subscribe({
           next: (res) => {
-            this.openSnackBar('ФИО добавлены успешно','Закрыть')
-            // alert('ФИО добавлены успешно');
+            this.openSnackBar('ФИО добавлены успешно', 'Закрыть');
             this.nameForm.reset();
             this.dialogRef.close('Сохранить');
           },
           error: () => {
-            this.openSnackBar('Ошибка при добавлении ФИО','Закрыть')
-            // alert('Ошибка при добавлении ФИО');
+            this.openSnackBar('Ошибка при добавлении ФИО', 'Закрыть');
           },
         });
       }
@@ -62,13 +58,12 @@ export class DialogComponent implements OnInit {
   updateData() {
     this.api.putData(this.nameForm.value, this.editData.id).subscribe({
       next: (res) => {
-        this.openSnackBar('Данные изменены успешно','Закрыть')
-        // alert('Данные изменены успешно');
+        this.openSnackBar('Данные изменены успешно', 'Закрыть');
         this.nameForm.reset();
         this.dialogRef.close('Обновить');
       },
       error: () => {
-        // alert('Ошибка при обновлении данных ');
+        this.openSnackBar('Ошибка при обновлении данных', 'Закрыть');
       },
     });
   }
